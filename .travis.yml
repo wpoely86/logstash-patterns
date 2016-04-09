@@ -1,12 +1,15 @@
 language: python
 python: 2.7
+env:
+    - LOGSTASH_VERSION=2.3.1
 addons:
   apt:
     packages: openjdk-7-jre-headless
 install:
     - easy_install vsc-base
-    - wget https://download.elastic.co/logstash/logstash/packages/debian/logstash_2.3.1-1_all.deb
-    - sudo dpkg -i logstash_2.3.1-1_all.deb
+    - wget https://download.elastic.co/logstash/logstash/logstash-${LOGSTASH_VERSION}.tar.gz
+    - tar -xzf logstash-${LOGSTASH_VERSION}.tar.gz
+    - export PATH=$PWD/logstash-${LOGSTASH_VERSION}/bin:$PATH
 script:
     - cd tests
     - python runtest.py
