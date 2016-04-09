@@ -1,0 +1,12 @@
+language: python
+python: 2.6
+addons:
+  apt:
+    packages: openjdk-7-jre-headless
+install:
+    - easy_install vsc-base
+    - wget https://download.elastic.co/logstash/logstash/packages/debian/logstash_2.3.1-1_all.deb
+    - sudo dpkg -i logstash_2.3.1-1_all.deb
+script:
+    - cd tests
+    - python runtest.py
