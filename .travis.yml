@@ -6,10 +6,10 @@ addons:
   apt:
     packages: openjdk-7-jre-headless
 install:
+    - cd $HOME
     - easy_install vsc-base
     - wget https://download.elastic.co/logstash/logstash/logstash-${LOGSTASH_VERSION}.tar.gz
     - tar -xzf logstash-${LOGSTASH_VERSION}.tar.gz
-    - export PATH=$PWD/logstash-${LOGSTASH_VERSION}/bin:$PATH
+    - export PATH=$HOME/logstash-${LOGSTASH_VERSION}/bin:$PATH
 script:
-    - cd tests
-    - python runtest.py
+    - cd $TRAVIS_BUILD_DIR/tests && python runtest.py -d
