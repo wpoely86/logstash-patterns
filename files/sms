@@ -1,0 +1,1 @@
+SMS_MSG	Handling SMS: to=%{NUMBER:togsm} subject=%{DATA:subject} message=%{GREEDYDATA:contents}
