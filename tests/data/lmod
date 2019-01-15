@@ -124,4 +124,15 @@ data = [
         "error_msg": "oldVersion=2015.1.133-GCC-4.9.2, sn=ifort, newVersion=, msg=e_No_AutoSwap, newFullName=ifort, oldFullName=ifort/2015.1.133-GCC-4.9.2",
     }
 },
+{
+    "raw": "<13>1 2016-06-07T17:29:14.762154+02:00 node2626 lmod: - lmod:: username=vsc40307, cluster=test, arch=skylake, jobid=, cmd=list, args=",
+    "expected": {
+        "@source_host": "node2626",
+        "program": "lmod",
+        "username": "vsc40307",
+        "command": "list",
+        "arch": "skylake",
+        "cluster": "test",
+    }
+},
 ]
