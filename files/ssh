@@ -3,7 +3,7 @@ SSH_STATUS (?:Accepted|Failed)
 SSH_INVALID_USER Invalid user
 
 SSH_MESSAGE_CONNECTION %{SSH_STATUS:status}
-SSH_MESSAGE_INVALID %{SSH_INVALID_USER:status} %{USERNAME_PAT} from %{IP}
+SSH_MESSAGE_INVALID %{SSH_INVALID_USER:status} %{USERNAME_PAT} from %{IP:ip}
 
 #newstyle
 SSH_SUBSYSTEM .*?subsystem request for (?<subsystem>.*)

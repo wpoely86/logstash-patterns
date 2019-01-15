@@ -16,4 +16,25 @@ data = [
         "jobid": "123456",
         },
 },
+{
+    "raw": "<133>2017-11-22T16:46:14.626508+01:00 nic200 Singularity: action-suid (U=245890,P=4131)> USER=wapoelma, IMAGE='tensorflow:latest', COMMAND='exec'",
+    "expected" : {
+        "program": "Singularity",
+        "username": "wapoelma",
+        "image": "tensorflow:latest",
+        "uid": "245890",
+        "pid": "4131",
+        "executable": "action-suid",
+        },
+},
+{
+    "raw": "<132>2017-11-22T11:09:29.204068+01:00 nic169 Singularity: action-suid (U=245890,P=13364)> Not mounting current directory: user bind control is disabled by system administrator",
+    "expected" : {
+        "program": "Singularity",
+        "uid": "245890",
+        "pid": "13364",
+        "executable": "action-suid",
+        "singularity_msg": "Not mounting current directory: user bind control is disabled by system administrator",
+        },
+},
 ]
