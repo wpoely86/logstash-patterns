@@ -1,10 +1,10 @@
 language: python
 python: 2.7
 env:
-    - LOGSTASH_VERSION=2.3.1
+    - LOGSTASH_VERSION=6.5.4
 addons:
   apt:
-    packages: openjdk-7-jre-headless
+    packages: default-jre-headless
 install:
     - cd $HOME
     - easy_install vsc-base
