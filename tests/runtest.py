@@ -69,9 +69,8 @@ DEFAULT_LOGSTASH_VERSION = '2.0.0'
 # missing configfile value to -f
 LOGSTASH_CMD = [
     'logstash',
-    'agent',
     '-p', os.path.dirname(os.getcwd()),  # filters in subdir logstash of this directory
-#    '--debug',
+#    '--log.level=debug',
     '-f'
 ]
 
@@ -107,7 +106,7 @@ def process(stdout, expected_size):
     ignore = re.compile(r'(:message=>)')
     output = []
     lines = []
-    warning = re.compile("warning:")
+    warning = re.compile(r"(warning:|Sending Logstash('s)? logs to|\[WARN \]|\[INFO \])")
     for line in stdout.split("\n"):
         if not line.strip():
             continue
